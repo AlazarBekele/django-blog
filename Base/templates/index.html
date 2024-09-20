@@ -22,7 +22,7 @@
                         <div class="col-xl-8 col-lg-7 col-md-12">
                             <div class="echo-hero-baner">
                                 <div class="echo-hero-banner-main-img  img-transition-scale">
-                                    <a href="post-details.html"><img class="banner-image-one img-hover" src="/media/{{latest_news.image}}" alt="Echo"></a>
+                                    <a href="{% url 'detail' latest_news.id  %}"><img class="banner-image-one img-hover" src="/media/{{latest_news.image}}" alt="Echo"></a>
                                 </div>
                                 <h3 class="echo-hero-title text-capitalize font-weight-bold"><a href="post-details.html" class="title-hover"> {{latest_news.title}}  </a></h3>
                                 <hr>
@@ -69,10 +69,10 @@
                                  {% for news in top_stories%}
                                 <div class="echo-top-story">
                                     <div class="echo-story-picture img-transition-scale">
-                                        <a href="post-details.html"><img src="/media/{{news.image}}" alt="Echo" class="img-hover"></a>
+                                        <a href="{% url 'detail' news.id %}"><img src="/media/{{news.image}}" alt="Echo" class="img-hover"></a>
                                     </div>
                                     <div class="echo-story-text">
-                                        <p><a href="#" class="title-hover fw-bold">{{news.title}}</a></p>
+                                        <p><a href="{% url 'detail' news.id %}" class="title-hover fw-bold">{{news.title}}</a></p>
                                         <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{news.created | timesince}} ago</a>
                                     </div>
                                 </div>
