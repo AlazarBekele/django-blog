@@ -1,0 +1,405 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    {% include "include/head.html" %}
+
+<body class="home-one">
+    <!-- Start Top Header Area -->
+     {% include 'include/header.html'%}
+
+    <!-- Top To Scroll -->
+    <!-- End Top scroll -->
+    <!-- Start Hero Area -->
+    <section class="echo-hero-section">
+        <div class="echo-hero">
+            <div class="container">
+                <div class="echo-full-hero-content">
+                    <div class="row gx-5">
+
+
+                        
+                        <div class="col-xl-8 col-lg-7 col-md-12">
+                            <div class="echo-hero-baner">
+                                <div class="echo-hero-banner-main-img  img-transition-scale">
+                                    <a href="post-details.html"><img class="banner-image-one img-hover" src="/media/{{latest_news.image}}" alt="Echo"></a>
+                                </div>
+                                <h3 class="echo-hero-title text-capitalize font-weight-bold"><a href="post-details.html" class="title-hover"> {{latest_news.title}}  </a></h3>
+                                <hr>
+                                <p class="echo-hero-discription">{{latest_news.description}}</p>
+                                <div class="echo-hero-area-titlepost-post-like-comment-share">
+                                    <div class="echo-hero-area-like-read-comment-share">
+                                        <a href="#"><i class="fa-light fa-clock"></i>{{latest_news.created |timesince }} ago</a>
+                                    </div>
+                                    <div class="echo-hero-area-like-read-comment-share">
+                                        <a href="#"><i class="fa-light fa-eye"></i> {{latest_news.view}} Views</a>
+                                    </div>
+                                    <div class="echo-hero-area-like-read-comment-share">
+                                        <a href="#"><i class="fa-light fa-comment-dots"></i> 05 Comment</a>
+                                    </div>
+                                    <div class="echo-hero-area-like-read-comment-share">
+                                        <a href="#"><i class="fa-light fa-arrow-up-from-bracket"></i> 1.5k Share</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        
+                        <div class="col-xl-4 col-lg-5 col-md-12">
+                            <div class="echo-home-1-hero-area-top-story">
+                                <h6>Top Story</h6>
+                                
+                                <div class="echo-top-story first">
+                                    <div class="echo-story-picture img-transition-scale">
+                                        <a href="post-details.html"><img src="{% static 'assets/images/home-1/hero/top-story11.png' %}" alt="Echo" class="img-hover"></a>
+                                    </div>
+                                    <div class="echo-story-text">
+                                        <h4><a href="#" class="title-hover">Clandestine Ukrainian claims successes against Russian</a></h4>
+                                        <div class="echo-trending-post-bottom-icons">
+                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                               
+                                 {% for news in top_stories%}
+                                <div class="echo-top-story">
+                                    <div class="echo-story-picture img-transition-scale">
+                                        <a href="post-details.html"><img src="/media/{{news.image}}" alt="Echo" class="img-hover"></a>
+                                    </div>
+                                    <div class="echo-story-text">
+                                        <p><a href="#" class="title-hover fw-bold">{{news.title}}</a></p>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{news.created | timesince}} ago</a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Area -->
+
+    <!-- Start Latest News Slider (using Slick Slider version 1.8.1) -->
+    <section class="echo-latest-news-area">
+        <div class="echo-latest-news-content">
+            <div class="container">
+                <div class="echo-be-slider-btn">
+                    <div class="echo-latest-nw-title">
+                        <h4>Latest News</h4>
+                    </div>
+                    <div class="echo-latest-news-next-prev-btn">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <div class="echo-latest-news-full-content">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-1.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Xi, Putin
+                                                hail 'new era' of ties in united...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-2.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Elon Musk's
+                                                global empire has made....</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-3.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Army of
+                                                lobbyists helped water down...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-4.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Sri Lanka to
+                                                receive first tranche from...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-1.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Xi, Putin
+                                                hail 'new era' of ties in united...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-2.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Elon Musk's
+                                                global empire has made...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-3.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Army of
+                                                lobbyists helped water down...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="echo-latest-news-main-content">
+                                    <div class="echo-latest-news-img img-transition-scale">
+                                        <a href="post-details.html">
+                                            <img src="{% static 'assets/images/home-1/latest-news/item-4.png' %}" alt="Echo" class="img-hover">
+                                        </a>
+                                    </div>
+                                    <div class="echo-latest-news-single-title">
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Sri Lanka to
+                                                receive first tranche from...</a></h5>
+                                    </div>
+                                    <div class="echo-latest-news-time-views">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Latest News Slider (using Slick Slider version 1.8.1) -->
+
+    <!-- Start Trending News Area -->
+    <section class="echo-trending-area">
+        <div class="echo-trending-content">
+            <div class="container">
+                <h6>Trending</h6>
+                <div class="echo-trending-full-content">
+                    <div class="row gx-6">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="echo-trending-left-site-post">
+                                <div class="echo-trending-left-site-post-img img-transition-scale">
+                                    <a href="post-details.html">
+                                        <img src="{% static 'assets/images/home-1/trending-left/item-1.png' %}" alt="Echo" class="img-hover">
+                                    </a>
+                                </div>
+                                <div class="echo-trending-right-site-post-title">
+                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Iran's Raisi
+                                            'welcomes' invitation by Saudi king</a></h5>
+                                    <div class="echo-trending-post-bottom-icons">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="echo-trending-left-site-post">
+                                <div class="echo-trending-left-site-post-img img-transition-scale">
+                                    <a href="post-details.html">
+                                        <img src="{% static 'assets/images/home-1/trending-left/item-2.png' %}" alt="Echo" class="img-hover">
+                                    </a>
+                                </div>
+                                <div class="echo-trending-right-site-post-title">
+                                    <h5><a href="post-details.html" class="text-capitalize title-hover">What happens
+                                            when your AI chatbot stops loving you back?</a></h5>
+                                    <div class="echo-trending-post-bottom-icons">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="echo-trending-left-site-post">
+                                <div class="echo-trending-left-site-post-img img-transition-scale">
+                                    <a href="post-details.html">
+                                        <img src="{% static 'assets/images/home-1/trending-left/item-3.png' %}" alt="Echo" class="img-hover">
+                                    </a>
+                                </div>
+                                <div class="echo-trending-right-site-post-title">
+                                    <h5><a href="post-details.html" class="text-capitalize title-hover">World's first
+                                            3D-printed rocket awaits debut flight</a></h5>
+                                    <div class="echo-trending-post-bottom-icons">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="echo-trending-left-site-post">
+                                <div class="echo-trending-left-site-post-img img-transition-scale">
+                                    <a href="post-details.html">
+                                        <img src="{% static 'assets/images/home-1/trending-left/item-4.png' %}" alt="Echo" class="img-hover">
+                                    </a>
+                                </div>
+                                <div class="echo-trending-right-site-post-title">
+                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Meta to wind
+                                            down NFTs on platforms amid crypto bust</a></h5>
+                                    <div class="echo-trending-post-bottom-icons">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                            <div class="echo-trending-right-site-post">
+                                <div class="echo-trending-right-site-post-img img-transition-scale">
+                                    <a href="post-details.html">
+                                        <img src="{% static 'assets/images/home-1/trending-right/item-1.png' %}" alt="Echo" class="img-hover">
+                                    </a>
+                                </div>
+                                <div class="echo-trending-right-site-post-title">
+                                    <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">World
+                                            Happiness Report 2023: What's the highway to happiness?</a></h4>
+                                </div>
+                                <div class="echo-trending-right-site-like-comment-share-icons">
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                    </div>
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-comment-dots"></i> 05
+                                            Comment</a>
+                                    </div>
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-arrow-up-from-bracket"></i>
+                                            1.5k Share</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="echo-hr-home-1-tranding">
+                            <div class="echo-trending-right-site-post">
+                                <div class="echo-trending-right-site-post-img img-transition-scale">
+                                    <a href="post-details.html">
+                                        <img src="{% static 'assets/images/home-1/trending-right/item-2.png' %}" alt="Echo" class="img-hover">
+                                    </a>
+                                </div>
+                                <div class="echo-trending-right-site-post-title">
+                                    <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">Alonso
+                                            gets his 100th F1 podium after penalty U-turn</a></h4>
+                                </div>
+                                <div class="echo-trending-right-site-like-comment-share-icons">
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                    </div>
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                    </div>
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-comment-dots"></i> 05
+                                            Comment</a>
+                                    </div>
+                                    <div class="echo-trending-right-like-comment-content">
+                                        <a href="#" class="pe-none"><i class="fa-light fa-arrow-up-from-bracket"></i>
+                                            1.5k Share</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Trending News Area -->
+
+   
+
+
+     {% include 'include/footer.html'%}
+    <!-- Start Scricpt Area -->
+
+    <!--scroll top button-->
+    <button class="scroll-top-btn">
+        <i class="fa-regular fa-angles-up"></i>
+    </button>
+    <!--scroll top button end-->
+
+    <div id="anywhere-home"></div>
+
+    {% include 'include/footer_js.html'%}
+</body>
+
+
+<!-- Mirrored from html.themewant.com/echo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 19 Sep 2024 17:32:24 GMT -->
+</html>
