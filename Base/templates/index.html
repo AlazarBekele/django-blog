@@ -11,6 +11,8 @@
     <!-- Top To Scroll -->
     <!-- End Top scroll -->
     <!-- Start Hero Area -->
+
+
     <section class="echo-hero-section">
         <div class="echo-hero">
             <div class="container">
@@ -46,25 +48,29 @@
 
 
 
-                        
+                {% comment %} Top Story {% endcomment %}
+
                         <div class="col-xl-4 col-lg-5 col-md-12">
                             <div class="echo-home-1-hero-area-top-story">
                                 <h6>Top Story</h6>
                                 
                                 <div class="echo-top-story first">
+
                                     <div class="echo-story-picture img-transition-scale">
-                                        <a href="post-details.html"><img src="{% static 'assets/images/home-1/hero/top-story11.png' %}" alt="Echo" class="img-hover"></a>
+                                        <a href="post-details.html"><img src="/media/{{latest_news.image}}" alt="Echo" class="img-hover"></a>
                                     </div>
+
                                     <div class="echo-story-text">
-                                        <h4><a href="#" class="title-hover">Clandestine Ukrainian claims successes against Russian</a></h4>
+                                        <h4><a href="#" class="title-hover">{{latest_news.title}}</a></h4>
                                         <div class="echo-trending-post-bottom-icons">
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{latest_news.created | timesince}}</a>
+                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{latest_news.view}}</a>
                                         </div>
                                     </div>
+
                                 </div>
 
-
+                {% comment %} Loop Detail {% endcomment %}
                                
                                  {% for news in top_stories%}
                                 <div class="echo-top-story">
@@ -90,6 +96,9 @@
     </section>
     <!-- End Hero Area -->
 
+
+
+
     <!-- Start Latest News Slider (using Slick Slider version 1.8.1) -->
     <section class="echo-latest-news-area">
         <div class="echo-latest-news-content">
@@ -106,142 +115,25 @@
                 <div class="echo-latest-news-full-content">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
+
+                        {% for x in Latest %}
                             <div class="swiper-slide">
                                 <div class="echo-latest-news-main-content">
                                     <div class="echo-latest-news-img img-transition-scale">
                                         <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-1.png' %}" alt="Echo" class="img-hover">
+                                            <img src="/media/{{categories.image}}" alt="Echo" class="img-hover">
                                         </a>
                                     </div>
                                     <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Xi, Putin
-                                                hail 'new era' of ties in united...</a></h5>
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">{{categories.title}}</a></h5>
                                     </div>
                                     <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{categories.created | timesince}}</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{categories.view}}</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-2.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Elon Musk's
-                                                global empire has made....</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-3.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Army of
-                                                lobbyists helped water down...</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-4.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Sri Lanka to
-                                                receive first tranche from...</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-1.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Xi, Putin
-                                                hail 'new era' of ties in united...</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-2.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Elon Musk's
-                                                global empire has made...</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-3.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Army of
-                                                lobbyists helped water down...</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="{% static 'assets/images/home-1/latest-news/item-4.png' %}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">Sri Lanka to
-                                                receive first tranche from...</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
+                        {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -249,6 +141,8 @@
         </div>
     </section>
     <!-- End Latest News Slider (using Slick Slider version 1.8.1) -->
+
+
 
     <!-- Start Trending News Area -->
     <section class="echo-trending-area">
@@ -261,7 +155,7 @@
                             <div class="echo-trending-left-site-post">
                                 <div class="echo-trending-left-site-post-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="{% static 'assets/images/home-1/trending-left/item-1.png' %}" alt="Echo" class="img-hover">
+                                        <img src="/media/{{top_stories.image}}" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-trending-right-site-post-title">
