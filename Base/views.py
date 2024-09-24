@@ -8,12 +8,14 @@ def index(request):
     imgTop = News.objects.filter().order_by('-title').last()
 
     trand = News.objects.filter().order_by('-title')[:3]
+    largeTrand = News.objects.filter().order_by('category')[:2]
 
     context = {
         'latest_news' : latest_news,
         'top_stories' : top_stories,
         'imgTop' : imgTop,
         'trand' : trand,
+        'largeTrand' : largeTrand
     }
     return render(request, 'index.html', context=context)
 

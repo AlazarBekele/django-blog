@@ -135,22 +135,24 @@
                         
 
                         <div class="col-xl-6 col-lg-6 col-md-12">
+
+                            {% for largeTrand in largeTrand %}
+
                             <div class="echo-trending-right-site-post">
                                 <div class="echo-trending-right-site-post-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="{% static 'assets/images/home-1/trending-right/item-1.png' %}" alt="Echo" class="img-hover">
+                                        <img src="/media/{{largeTrand.image}}" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-trending-right-site-post-title">
-                                    <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">World
-                                            Happiness Report 2023: What's the highway to happiness?</a></h4>
+                                    <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">{{largeTrand.title}}</a></h4>
                                 </div>
                                 <div class="echo-trending-right-site-like-comment-share-icons">
                                     <div class="echo-trending-right-like-comment-content">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{largeTrand.created | timesince}}</a>
                                     </div>
                                     <div class="echo-trending-right-like-comment-content">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{largeTrand.view}}</a>
                                     </div>
                                     <div class="echo-trending-right-like-comment-content">
                                         <a href="#" class="pe-none"><i class="fa-light fa-comment-dots"></i> 05
@@ -162,34 +164,9 @@
                                     </div>
                                 </div>
                             </div>
+
+                            {% endfor %}
                             <hr class="echo-hr-home-1-tranding">
-                            <div class="echo-trending-right-site-post">
-                                <div class="echo-trending-right-site-post-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="{% static 'assets/images/home-1/trending-right/item-2.png' %}" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-trending-right-site-post-title">
-                                    <h4 class="text-capitalize"><a href="post-details.html" class="title-hover">Alonso
-                                            gets his 100th F1 podium after penalty U-turn</a></h4>
-                                </div>
-                                <div class="echo-trending-right-site-like-comment-share-icons">
-                                    <div class="echo-trending-right-like-comment-content">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                    </div>
-                                    <div class="echo-trending-right-like-comment-content">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                    <div class="echo-trending-right-like-comment-content">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-comment-dots"></i> 05
-                                            Comment</a>
-                                    </div>
-                                    <div class="echo-trending-right-like-comment-content">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-arrow-up-from-bracket"></i>
-                                            1.5k Share</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
 
