@@ -57,20 +57,21 @@
                                 <div class="echo-top-story first">
 
                                     <div class="echo-story-picture img-transition-scale">
-                                        <a href="post-details.html"><img src="/media/{{latest_news.image}}" alt="Echo" class="img-hover"></a>
+                                        <a href="post-details.html"><img src="/media/{{imgTop.image}}" alt="Echo" class="img-hover"></a>
                                     </div>
 
                                     <div class="echo-story-text">
-                                        <h4><a href="#" class="title-hover">{{latest_news.title}}</a></h4>
+                                        <h4><a href="#" class="title-hover">{{imgTop.title}}</a></h4>
                                         <div class="echo-trending-post-bottom-icons">
-                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{latest_news.created | timesince}}</a>
-                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{latest_news.view}}</a>
+                                            <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{imgTop.created | timesince}}</a>
+                                            <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{imgTop.view}}</a>
                                         </div>
                                     </div>
 
                                 </div>
 
-                {% comment %} Loop Detail {% endcomment %}
+                
+                                {% comment %} Loop Detail {% endcomment %}
                                
                                  {% for news in top_stories%}
                                 <div class="echo-top-story">
@@ -99,51 +100,6 @@
 
 
 
-    <!-- Start Latest News Slider (using Slick Slider version 1.8.1) -->
-    <section class="echo-latest-news-area">
-        <div class="echo-latest-news-content">
-            <div class="container">
-                <div class="echo-be-slider-btn">
-                    <div class="echo-latest-nw-title">
-                        <h4>Latest News</h4>
-                    </div>
-                    <div class="echo-latest-news-next-prev-btn">
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </div>
-                <div class="echo-latest-news-full-content">
-                    <div class="swiper mySwiper">
-                        <div class="swiper-wrapper">
-
-                        {% for latestNews in contain %}
-                            <div class="swiper-slide">
-                                <div class="echo-latest-news-main-content">
-                                    <div class="echo-latest-news-img img-transition-scale">
-                                        <a href="post-details.html">
-                                            <img src="/media/{{contain.image}}" alt="Echo" class="img-hover">
-                                        </a>
-                                    </div>
-                                    <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">{{contextl.title}}</a></h5>
-                                    </div>
-                                    <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{contextl.created | timesince}}</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{contain.view}}</a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Latest News Slider (using Slick Slider version 1.8.1) -->
-
-
-
     <!-- Start Trending News Area -->
     <section class="echo-trending-area">
         <div class="echo-trending-content">
@@ -151,68 +107,33 @@
                 <h6>Trending</h6>
                 <div class="echo-trending-full-content">
                     <div class="row gx-6">
+
+
+                        
+
                         <div class="col-xl-6 col-lg-6 col-md-12">
+
+                            {% for trand in trand %}
                             <div class="echo-trending-left-site-post">
                                 <div class="echo-trending-left-site-post-img img-transition-scale">
                                     <a href="post-details.html">
-                                        <img src="/media/{{top_stories.image}}" alt="Echo" class="img-hover">
+                                        <img src="/media/{{trand.image}}" alt="Echo" class="img-hover">
                                     </a>
                                 </div>
                                 <div class="echo-trending-right-site-post-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Iran's Raisi
-                                            'welcomes' invitation by Saudi king</a></h5>
+                                    <h5><a href="post-details.html" class="text-capitalize title-hover">{{trand.title}}</a></h5>
                                     <div class="echo-trending-post-bottom-icons">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{trand.view}}</a>
                                         <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="echo-trending-left-site-post">
-                                <div class="echo-trending-left-site-post-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="{% static 'assets/images/home-1/trending-left/item-2.png' %}" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-trending-right-site-post-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">What happens
-                                            when your AI chatbot stops loving you back?</a></h5>
-                                    <div class="echo-trending-post-bottom-icons">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-trending-left-site-post">
-                                <div class="echo-trending-left-site-post-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="{% static 'assets/images/home-1/trending-left/item-3.png' %}" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-trending-right-site-post-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">World's first
-                                            3D-printed rocket awaits debut flight</a></h5>
-                                    <div class="echo-trending-post-bottom-icons">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echo-trending-left-site-post">
-                                <div class="echo-trending-left-site-post-img img-transition-scale">
-                                    <a href="post-details.html">
-                                        <img src="{% static 'assets/images/home-1/trending-left/item-4.png' %}" alt="Echo" class="img-hover">
-                                    </a>
-                                </div>
-                                <div class="echo-trending-right-site-post-title">
-                                    <h5><a href="post-details.html" class="text-capitalize title-hover">Meta to wind
-                                            down NFTs on platforms amid crypto bust</a></h5>
-                                    <div class="echo-trending-post-bottom-icons">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i> 06 minute read</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i> 3.5k Views</a>
-                                    </div>
-                                </div>
-                            </div>
+
+                            {% endfor %}
                         </div>
+
+                        
+
                         <div class="col-xl-6 col-lg-6 col-md-12">
                             <div class="echo-trending-right-site-post">
                                 <div class="echo-trending-right-site-post-img img-transition-scale">
@@ -270,6 +191,9 @@
                                 </div>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>

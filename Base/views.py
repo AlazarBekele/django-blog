@@ -4,13 +4,16 @@ from .models import News, Category
 # Create your views here.
 def index(request): 
     latest_news = News.objects.filter().order_by('-created').first()
-    top_stories = News.objects.filter().order_by('-created')[:3]
-    contain = News.objects.filter().order_by('title').last()
+    top_stories = News.objects.filter().order_by('created')[:4]
+    imgTop = News.objects.filter().order_by('-title').last()
+
+    trand = News.objects.filter().order_by('-title')[:3]
 
     context = {
         'latest_news' : latest_news,
         'top_stories' : top_stories,
-        'contextl' : contain
+        'imgTop' : imgTop,
+        'trand' : trand,
     }
     return render(request, 'index.html', context=context)
 
@@ -24,3 +27,12 @@ def detail(request, id):
         'categories' : categories
     }
     return render(request, 'post-details.html', context=context)
+
+def other(request):
+    other = News.objects.all()
+
+    context = {
+        'other' : context
+    }
+
+    return render (request, 'index.html', context)
