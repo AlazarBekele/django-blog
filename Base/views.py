@@ -5,15 +5,14 @@ from .models import News, Category
 def index(request): 
     latest_news = News.objects.filter().order_by('-created').first()
     top_stories = News.objects.filter().order_by('-created')[:3]
-    Trending = News.objects.filter().order_by('-created').last()
+    contain = News.objects.filter().order_by('title').last()
 
     context = {
         'latest_news' : latest_news,
         'top_stories' : top_stories,
-        'Trending' : Trending
+        'contextl' : contain
     }
     return render(request, 'index.html', context=context)
-
 
 
 def detail(request, id):

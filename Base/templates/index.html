@@ -116,20 +116,20 @@
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
 
-                        {% for x in Latest %}
+                        {% for latestNews in contain %}
                             <div class="swiper-slide">
                                 <div class="echo-latest-news-main-content">
                                     <div class="echo-latest-news-img img-transition-scale">
                                         <a href="post-details.html">
-                                            <img src="/media/{{categories.image}}" alt="Echo" class="img-hover">
+                                            <img src="/media/{{contain.image}}" alt="Echo" class="img-hover">
                                         </a>
                                     </div>
                                     <div class="echo-latest-news-single-title">
-                                        <h5><a href="post-details.html" class="text-capitalize title-hover">{{categories.title}}</a></h5>
+                                        <h5><a href="post-details.html" class="text-capitalize title-hover">{{contextl.title}}</a></h5>
                                     </div>
                                     <div class="echo-latest-news-time-views">
-                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{categories.created | timesince}}</a>
-                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{categories.view}}</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-clock"></i>{{contextl.created | timesince}}</a>
+                                        <a href="#" class="pe-none"><i class="fa-light fa-eye"></i>{{contain.view}}</a>
                                     </div>
                                 </div>
                             </div>
