@@ -10,12 +10,19 @@ def index(request):
     trand = News.objects.filter().order_by('-title')[:3]
     largeTrand = News.objects.filter().order_by('category')[:2]
 
+    # Header dynamic
+
+    head = News.objects.filter().order_by('category')[:4]
+
     context = {
         'latest_news' : latest_news,
         'top_stories' : top_stories,
         'imgTop' : imgTop,
         'trand' : trand,
-        'largeTrand' : largeTrand
+        'largeTrand' : largeTrand,
+
+
+        'head' : head,
     }
     return render(request, 'index.html', context=context)
 

@@ -19,80 +19,46 @@
                                         <li class="menu-item echo-has-dropdown">
                                             <a href="#" class="echo-dropdown-main-element active">Home</a>
                                             <!-- Start Dropdown Menu -->
-                                            <ul class="echo-submenu list-unstyled menu-home">
-                                                <li class="nav-item"><a href="index.html">Home 01 - Main</a></li>
-                                                <li class="nav-item"><a href="index-two.html">Home 02 - Fashion</a></li>
-                                                <li class="nav-item"><a href="index-three.html">Home 03 - Technology</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-four.html">Home 04 - Gamming</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-five.html">Home 05 - Sports</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-six.html">Home 06 - Travel</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-seven.html">Home 07 - AI</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-eight.html">Home 08 - Politics</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-nine.html">Home 09 - Food</a></li>
-                                                <li class="nav-item"><a class="mobile-menu-link" href="index-ten.html">Home 10 - Photography</a></li>
-                                            </ul>
+                                            
                                             <!-- End Dropdown Menu -->
                                         </li>
                                         <li class="menu-item echo-has-dropdown">
                                             <a href="#" class="echo-dropdown-main-element">Pages</a>
-                                            <ul class="echo-submenu list-unstyled menu-pages">
-                                                <li class="nav-item"><a href="about.html">About</a></li>
-                                                <li class="nav-item"><a href="author.html">Author</a></li>
-                                                <li class="nav-item"><a href="team.html">Team</a></li>
-                                                <li class="nav-item"><a href="404.html">Error Page</a></li>
-                                            </ul>
+                                           
                                         </li>
                                         <li class="menu-item echo-has-dropdown">
                                             <a href="#" class="echo-dropdown-main-element">Category</a>
                                             <ul class="echo-submenu list-unstyled menu-pages">
-                                                <li class="nav-item"><a href="category-style-1.html">Category Style 1</a></li>
-                                                <li class="nav-item"><a href="category-style-2.html">Category Style 2</a></li>
-                                                <li class="nav-item"><a href="category-style-3.html">Category Style 3</a></li>
+                                                
                                             </ul>
                                         </li>
                                         <li class="menu-item echo-has-dropdown">
                                             <a href="#" class="echo-dropdown-main-element">News</a>
                                             <ul class="mega-menu list-unstyled menu-pages">
+
+                                                {% for head in head %}
                                                 <li class="nav-item"><a href="post-style-1.html">
+
+                                                    
+
                                                         <div class="mega-menu-item">
                                                             <div class="mega-menu-img img-transition-scales">
-                                                                <img src="{% static 'assets/images/home-1/latest-news/item-1.png' %}" alt="Echo" class="img-hovers">
+                                                                <img style="width: 150px;" src="/media/{{head.image}}" alt="Echo" class="img-hovers">
                                                             </div>
                                                             <div class="mega-menu-title">
-                                                                <h5>Xi, Putin hail 'new era'....</h5>
+                                                                <p>{{head.title}}</p>
                                                             </div>
                                                         </div>
-                                                    </a></li>
-                                                <li class="nav-item"><a href="post-style-2.html">
-                                                        <div class="mega-menu-item">
-                                                            <div class="mega-menu-img img-transition-scales">
-                                                                <img src="{% static 'assets/images/home-1/latest-news/item-2.png' %}" alt="Echo" class="img-hovers">
-                                                            </div>
-                                                            <div class="mega-menu-title">
-                                                                <h5>Elon Musk's global empire....</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a></li>
-                                                <li class="nav-item"><a href="post-style-3.html">
-                                                        <div class="mega-menu item">
-                                                            <div class="mega-menu-img img-transition-scales">
-                                                                <img src="{% static 'assets/images/home-1/latest-news/item-3.png' %}" alt="Echo" class="img-hovers">
-                                                            </div>
-                                                            <div class="mega-menu-title">
-                                                                <h5>Sri Lanka to receive first ....</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a></li>
-                                                <li class="nav-item"><a href="post-details.html">
-                                                        <div class="mega-menu item">
-                                                            <div class="mega-menu-img img-transition-scales">
-                                                                <img src="{% static 'assets/images/home-1/latest-news/item-4.png' %}" alt="Echo" class="img-hovers">
-                                                            </div>
-                                                            <div class="mega-menu-title">
-                                                                <h5>Turkey earthquake prepare....</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a></li>
+
+                                                    
+
+                                                </a></li>
+                                                {% endfor %}
+
+
+                                            </a></li>
+                                            
+                                            
                                             </ul>
                                         </li>
                                         <li class="menu-item echo-has-dropdown">
