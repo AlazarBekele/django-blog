@@ -6,6 +6,7 @@ def index(request):
     latest_news = News.objects.filter().order_by('-created').first()
     top_stories = News.objects.filter().order_by('created')[:4]
     imgTop = News.objects.filter().order_by('-title').last()
+    footer = News.objects.filter().order_by('title')[:8]
 
     trand = News.objects.filter().order_by('-title')[:3]
     largeTrand = News.objects.filter().order_by('category')[:2]
@@ -23,6 +24,8 @@ def index(request):
 
 
         'head' : head,
+
+        'footer' : footer,
     }
     return render(request, 'index.html', context=context)
 
