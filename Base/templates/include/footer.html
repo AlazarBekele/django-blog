@@ -38,16 +38,10 @@
                     </div>
                     <div class="echo-footer-most-popular">
                         <ul class="list-unstyled">
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Life Style</a></li>
-                            <li><a href="#">Word</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Politics</a></li>
-                            <li><a href="#">Travels</a></li>
-                            <li><a href="#">Tech</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Video</a></li>
-                            <li><a href="#">Game</a></li>
+
+                            {% for footer in footer %}
+                            <li><a href="#">{{footer.category}}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
