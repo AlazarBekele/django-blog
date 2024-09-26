@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import News, Category
+from .models import News, Category, Profile
 
 # Create your views here.
 def index(request): 
@@ -48,3 +48,12 @@ def other(request):
     }
 
     return render (request, 'index.html', context)
+
+def ProfileDeploy (request):
+    ProfileDeploy = Profile.objects.filter()[:2]
+
+    context = {
+        'ProfileDeploy' : ProfileDeploy
+    }
+
+    return render (request, 'post-details.html', context=context)
