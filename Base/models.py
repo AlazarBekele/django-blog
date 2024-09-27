@@ -40,3 +40,9 @@ class Profile (models.Model):
 
     def __str__(self) -> str:
         return self.username
+    
+class Mainidea (models.Model):
+    WebTopic = models.CharField (max_length=20)
+
+    def __str__(self) -> str:
+        return self.WebTopic
