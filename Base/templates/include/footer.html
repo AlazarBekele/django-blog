@@ -10,23 +10,23 @@
                     </div>
                     <div class="echo-footer-address">
                         <span class="text-capitalize"><i class="fa-regular fa-map"></i> 255 Sheet, New Avanew, NY</span>
-                        <span class="text-capitalize"><i class="fa-regular fa-phone"></i> (00) 236 123 456 88</span>
+                        <span class="text-capitalize"><i class="fa-regular fa-phone"></i> +(251) 715351962</span>
                         <span class="text-capitalize"><i class="fa-sharp fa-regular fa-envelope"></i>
                             info@demomail.com</span>
                         <div class="echo-footer-social-media">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=61560886209060">
                                 <i class="fa-brands fa-facebook-f"></i>
                             </a>
-                            <a href="#">
+                            <a href="x.com">
                                 <i class="fa-brands fa-twitter"></i>
                             </a>
-                            <a href="#">
+                            <a href="https://www.linkedin.com/in/alazar-bekele-8aa7992b6/">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
-                            <a href="#">
+                            <a href="https://www.instagram.com/alazarbekele11/">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="#">
+                            <a href="youtube.com">
                                 <i class="fa-brands fa-youtube"></i>
                             </a>
                         </div>
@@ -39,13 +39,16 @@
                     <div class="echo-footer-most-popular">
                         <ul class="list-unstyled">
 
-                            {% for footer in footer %}
-                            <li><a href="#">{{footer.category}}</a></li>
+                            {% for footerIdea in footerIdea %}
+
+                                <li><a href="#">{{footerIdea.title}}</a></li>
+
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
-                <div class="echo-footer-content-3">
+
+                {% comment %} <div class="echo-footer-content-3">
                     <div class="echo-get-in-tuch">
                         <h4 class="text-capitalize">Help</h4>
                     </div>
@@ -58,7 +61,8 @@
                             <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> {% endcomment %}
+
                 <div class="echo-footer-content-4">
                     <div class="echo-get-in-tuch">
                         <h4 class="text-capitalize">Newsletter</h4>

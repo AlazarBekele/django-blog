@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import News, Category, Profile
+from .models import News, Category, Profile, Mainidea
 
 # Create your views here.
 def index(request): 
@@ -54,6 +54,16 @@ def ProfileDeploy (request):
 
     context = {
         'ProfileDeploy' : ProfileDeploy
+    }
+
+    return render (request, 'post-details.html', context=context)
+
+
+def footerIdea (request):
+    footerIdea = Mainidea.objects.all()
+
+    context = {
+        'footerIdea' : footerIdea
     }
 
     return render (request, 'post-details.html', context=context)
